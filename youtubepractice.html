@@ -1,0 +1,50 @@
+<html>
+<head>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
+        <script type= "text/javascript">
+        		function getYouTubeInfo() {
+	                $.ajax({
+	                		//depending on the url -> gets different xml file
+	                        url: "https://gdata.youtube.com/feeds/api/channels?q=soccer&start-index=11&max-results=10&v=2",
+	                        // dataType can be 1)xml, 2)json
+	                        dataType: "xml",
+	                        //data is the xml file
+	                        success: function (data) { parseresults(data); }
+	                });
+        		}
+
+        		function parseresults(data) {
+		               	xmlDocumentElement = data.documentElement;
+		               	var id_array = xmlDocumentElement.getElementsByTagName("id");
+		               	var updated_array = xmlDocumentElement.getElementsByTagName("updated");
+		               	var link_array = xmlDocumentElement.getElementsByTagName("link");
+		               	for (var i =0; i < id_array.length; i++) {
+		               		alert(id_array[i].childNodes[0].nodeValue);
+		               	}
+		               
+		        }
+
+        		$(document).ready(function () {
+                	getYouTubeInfo();
+        		});
+
+        </script>
+
+
+        <body bgcolor="grey">
+        <div align="center">
+                <br/><br/>
+                <div id="title" style="color: #dddddd">Could not find a title</div><br/>
+                <iframe title="Youtube Video Player" width="640" height="390" src="http://www.youtube.com/embed/<?php echo $_GET['v']; ?>?fs=1&autoplay=1&loop=0" frameborder="0" allowfullscreen style="border: 1px solid black"></iframe>
+                <br/><br/>
+                <div id="description" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find a description</div>
+                <div id="extrainfo" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find extra information</div>
+                <div id="comments" style="width:400px; background-color: #dddddd; font-size:10px; text-align:left;">Could not find comments</div>
+        </div>
+</body>
+
+
+
+
+</head>
+</html>

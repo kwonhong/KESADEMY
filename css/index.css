@@ -1,0 +1,50 @@
+.main {
+	width:100%;
+	min-height:500px;
+	overflow:hidden;
+	background-color:#101010;
+	text-align:center;
+	margin:auto;
+	padding:40px;
+}
+
+.video-box-main{
+	background-color:#ffffff;
+	width:70%;
+	height:70%;
+	padding:10px;
+	float:left;
+	
+
+}
+
+.video-box-list{
+	background-color:#101010;
+	width:30%;
+	height:70%;
+	float:right;
+	padding:0px 20px 20px 20px;
+	text-align: center;
+
+	
+}
+
+.video-box-sub{
+	background-color:#ffffff;
+	width:60%;
+	height:30%;
+	padding:10px;
+	margin:auto;
+}
+
+.mid{
+	background-color:#72b842;
+	width:100%;
+	height:300px;
+	text-align:center;
+
+}
+
+.circleBase{
+	border-radius: 50%;
+}
